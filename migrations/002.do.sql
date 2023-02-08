@@ -1,0 +1,10 @@
+CREATE TABLE tags (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE link_tags (
+  id INTEGER PRIMARY KEY,
+  link_id INTEGER REFERENCES links(id),
+  tag_id INTEGER REFERENCES tags(id)
+);
