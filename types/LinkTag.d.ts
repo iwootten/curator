@@ -3,9 +3,8 @@
  * A LinkTag
  */
 declare interface LinkTag {
-    id?: number;
-    linkId?: number | null;
-    tagId?: number | null;
+    tagId?: number;
+    linkId?: number;
 }
 
 export { LinkTag };

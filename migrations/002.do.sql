@@ -4,7 +4,9 @@ CREATE TABLE tags (
 );
 
 CREATE TABLE link_tags (
-  id INTEGER PRIMARY KEY,
-  link_id INTEGER REFERENCES links(id),
-  tag_id INTEGER REFERENCES tags(id)
+  tag_id INTEGER NOT NULL,
+  link_id INTEGER NOT NULL,
+  CONSTRAINT fk_tag_id FOREIGN KEY (tag_id)  REFERENCES tags(id),
+  CONSTRAINT fk_link_id FOREIGN KEY (link_id)  REFERENCES links(id),
+  PRIMARY KEY (tag_id, link_id)
 );
